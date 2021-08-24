@@ -60,6 +60,7 @@ module.exports = fp(async function (fastify, opts) {
         const request = this
         const idPrefix = catToPrefix[category]
         const id = calculateID(idPrefix, data)
+        orders[id] = {total: 0}
         data.push({id, ...request.body})
     })
 })
